@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  mikhmon:
+    image: trianwar/mikhmon:latest
+    container_name: mikhmon-v3
+    restart: unless-stopped
+    ports:
+      - "8877:8080"             # akses via http://<IP_host>:8877/
+    environment:
+      - TZ=Asia/Jakarta
+    volumes:
+      - /DATA/AppData/mikhmon-v3:/var/www/html/mikhmon  ## penempatan file
